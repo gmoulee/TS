@@ -107,5 +107,5 @@
     "require": ["tsconfig-paths/register"]
   },
   "include": ["src/**/*", "package.json"],
-  "exclude": ["node_modules/**/*", "compiled/**/*"]
+  "exclude": ["node_modules/**/*", "compiled/**/*"],
 }
