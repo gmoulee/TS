@@ -1,10 +1,11 @@
+import playerRoutes from '@src/modules/player/player.route'
 import fastify, {
   FastifyInstance,
   FastifyPluginCallback,
   RouteOptions,
 } from 'fastify'
 
-const routes = [] as RouteOptions[]
+const routes = [...playerRoutes] as RouteOptions[]
 
 const router: FastifyPluginCallback = (
   fastify: FastifyInstance,
