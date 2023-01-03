@@ -1,16 +1,14 @@
 require('dotenv').config()
 import fastify from 'fastify'
+import type { FastifyInstance as FastifyApp } from 'fastify'
 
-const server = fastify()
+import router from './plugins/router'
 
-server.get('/ping', async (request, reply) => {
-  return 'pong\n'
-})
+export function app(): FastifyApp {
+  const app = fastify({
+    ignoreDuplicateSlashes: true,
+  })
 
-server.listen({ port: Number(process.env.SERVER_PORT) }, (err, address) => {
-  if (err) {
-    console.error(err)
-    process.exit(1)
-  }
-  console.log(`Server listening at ${address}`)
-})
+  void app.register(router)
+  return app
+}

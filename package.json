@@ -2,11 +2,11 @@
   "name": "predictions_app",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "compiled/server.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "start": "node compiled/app.js",
-    "dev": "nodemon --inspect=9235 src/app.ts",
+    "build": "del compiled && tsc -p tsconfig.json",
+    "start": "npm run build && node compiled/server.js",
+    "dev": "nodemon --inspect=9235 src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "db-migrate"
   },

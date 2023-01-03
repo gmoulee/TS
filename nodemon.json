@@ -1,8 +1,8 @@
 {
-    "watch": ["src"],
-    "ext": "ts, json",
-    "execMap": {
-        "ts": "node --require ts-node/register"
-    },
-    "ignore": "node_modules"
+  "watch": ["src"],
+  "ext": "ts, json",
+  "execMap": {
+    "ts": "node --require ts-node/register"
+  },
+  "ignore": ["compiled/*", "node_modules"]
 }
