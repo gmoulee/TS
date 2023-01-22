@@ -2,9 +2,10 @@ import {
   CreatePlayerRequestBody,
   FastifyRequestWithPlayerInfo,
   GetPlayerInfoRequestParams
-} from '@src/share/share.domain'
+} from '@src/share/domain.share'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import * as playerService from './player.service'
+import { createPlayerError } from '@src/share/error.share'
 
 export const getPlayerById = async (
   request: FastifyRequestWithPlayerInfo<GetPlayerInfoRequestParams>,
@@ -36,6 +37,9 @@ export const createPlayer = async (
     await playerService.createPlayer(playerInfo)
     return { success: true }
   } catch (error) {
-    throw new Error('Error while creating the player')
+    const internalError = createPlayerError(
+      'Something went wrong while creating the player'
+    )
+    return { success: false, internalError }
   }
 }
