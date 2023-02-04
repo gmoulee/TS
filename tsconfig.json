@@ -101,12 +101,12 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "paths": {
       "@src/*": ["src/*", "compiled/*"],
-      "@modules/*": ["src/modules/*"]
+      "@modules/*": ["src/modules/*", "compiled/modules/*"]
     }
   },
   "ts-node": {
     "require": ["tsconfig-paths/register"]
   },
-  "include": ["src/**/*", "package.json", "test/modules/player/player.test.js"],
+  "include": ["src/**/*", "package.json", "test/**/*"],
   "exclude": ["node_modules/**/*"],
 }
