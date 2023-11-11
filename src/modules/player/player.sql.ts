@@ -1,5 +1,5 @@
 import { SqlManager } from '@src/plugins/db'
-import { Player, PlayerDto, Playerpayload } from './player.domain'
+import { PlayerDto, Playerpayload } from './player.domain'
 
 const db = SqlManager.instance
 

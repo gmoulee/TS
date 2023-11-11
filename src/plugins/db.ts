@@ -1,4 +1,4 @@
-import { QueryParams, QueryResults } from '@src/share/share.domain'
+import { QueryParams, QueryResults } from '@src/share/domain.share'
 import * as mysql from 'mysql2/promise'
 
 export class SqlManager {
