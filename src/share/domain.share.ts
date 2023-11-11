@@ -5,6 +5,10 @@ export type FastifyRequestWithPlayerInfo<
   T extends RouteGenericInterface = RouteGenericInterface
 > = FastifyRequest<T>
 
+export type FastifyRequestWithMatchInfo<
+  T extends RouteGenericInterface = RouteGenericInterface
+> = FastifyRequest<T>
+
 export type GetPlayerInfoRequestParams = {
   Params: {
     playerId: number
@@ -15,6 +19,20 @@ export type CreatePlayerRequestBody = {
   Body: {
     username: string
     password: string
+  }
+}
+
+export type CreateMatchRequestBody = {
+  Body: {
+    teamOne: string
+    teamTwo: string
+    eventDateTime: string
+  }
+}
+
+export type GetMatchInfoRequestParams = {
+  Params: {
+    matchId: number
   }
 }
 
